@@ -122,7 +122,9 @@ function getWinner(colIdx, rowIdx) {
         checkDiagWinNESW(colIdx, rowIdx) ||
         checkDiagWinNWSE(colIdx, rowIdx) ||
         checkHorWin(colIdx, rowIdx) ||
-        checkVertWin(colIdx, rowIdx)
+        checkVertWin(colIdx, rowIdx) ||
+		//Create another check for tie
+		checkForTie(colIdx, rowIdx)
     )
 }
 
@@ -185,4 +187,14 @@ function checkDiagWinNESW(colIdx, rowIdx) {
     const adjCountSW = countAdjacent(colIdx, rowIdx, -1, -1)
 
     return adjCountNE + adjCountSW >= 3 ? board[colIdx][rowIdx] : null
+}
+//What I thought would work. would love to review
+function checkForTie(colIdx, rowIdx) {
+const boardCount = countAdjacent.includes("0") {
+	//Still spaces left
+	//Do nothing, simply keep playing
+} else {
+	//No spaces left to put disc
+	console.log("No more spaces braniacs!")
+}
 }
